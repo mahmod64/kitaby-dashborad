@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="CSS/orders.css">
+        <script type="text/javascript" src="Js/md5.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <ul>
+                    <li><h2>كتابي</h2></li>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li ><a href="books.html">الكتب</a></li>
+                    <li><a href="orders.html" class="active">الطلبات</a></li>
+                    <li><a href="customers.html">الزبائن</a></li>
+                    <li id="em"><a href="employees.html">الموظفين</a></li>
+                    <li><a href="#" id="signout" onclick="Signout()">تسجيل خروج</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="content-head">
+                <h1>الطلبات</h1>
+                </div>
+                <div>
+                    <input type="text" placeholder="رقم الطلب" class="search" id="search"><button id="searbtn">search</button>
+                    <input type="checkbox" id="review" name="review">
+                    <label for="review">تحت المراجعة</label>
+                    <input type="checkbox" id="delivering" name="delivering">
+                    <label for="delivering">قيد التوصيل</label>
+                    <input type="checkbox" id="delivered" name="delivered">
+                    <label for="delivered">تم الاستلام</label>
+                    <input type="checkbox" id="rejected" name="rejected">
+                    <label for="rejected">ملغية</label>
+                </div>
+                <div class="content-body">
+                        <table class="table">
+                            <thead>
+                                <th>عرض</th>
+                                <th>رقم الطلب</th>
+                                <th>تاريخ الطلب</th>
+                                <th>رقم هاتف الزبون</th>
+                                <th>الحالة</th>
+                                <th>وسيلة الدفع</th>
+                                <th>السعر</th>
+                            </thead>
+                        <tbody id="tbody1"></tbody>
+                    </tr>
+                </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="module" src="Js/orders.js"></script>
+</html>

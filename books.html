@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Dashboard Kitaby</title>
+        <link rel="icon" type="image/x-icon" href="شعار_كتابي.png">
+        <link rel="stylesheet" href="CSS/books.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <ul>
+                    <li><h2>كتابي</h2></li>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li class="active"><a href="books.html">الكتب</a></li>
+                    <li><a href="orders.html">الطلبات</a></li>
+                    <li><a href="customers.html">الزبائن</a></li>
+                    <li id="em"><a href="employees.html">الموظفين</a></li>
+                    <li><a href="#" id="signout" onclick="Signout()">تسجيل خروج</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="content-head">
+                <h1>الكتب</h1>
+                <a href="add-book.html">إضافة كتاب</a>
+                </div>
+                <div>
+                    <input type="text" placeholder="ردمك الكتاب" class="search" id="search">
+                    <input type="text" placeholder="عنوان الكتاب" class="search" id="search2">
+                    <input type="checkbox" value="active" name="active" id="active">
+                    <label for="active">  مفعل</label>
+                    <input type="checkbox" value="deactive" name="deactive" id="deactive">
+                    <label for="deactive">  غير مفعل</label>
+                </div>
+                <div class="content-body">
+                        <table class="table">
+                            <thead>
+                                <th>عرض</th>
+                                <th>رقم الكتاب</th>
+                                <th>العنوان</th>
+                                <th>المؤلف</th>
+                                <th>دار النشر</th>
+                                <th>الكمية</th>
+                                <th>الفئة</th>
+                                <th>السعر</th>
+                            </thead>
+                        <tbody id="tbody1"></tbody>
+                    </tr>
+                </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="module" src="Js/books.js"></script>
+</html>

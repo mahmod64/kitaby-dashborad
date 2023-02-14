@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="CSS/customers.css">
+        <script type="text/javascript" src="Js/md5.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <ul>
+                    <li><h2>كتابي</h2></li>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li ><a href="books.html">الكتب</a></li>
+                    <li><a href="orders.html">الطلبات</a></li>
+                    <li><a href="customers.html" class="active">الزبائن</a></li>
+                    <li id="em"><a href="employees.html">الموظفين</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#" id="signout" onclick="Signout()">تسجيل خروج</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="content-head">
+                <h1>الزبائن</h1>
+                </div>
+                <div>
+                    <input type="checkbox" value="deactive" name="deactive" id="deactive">
+                    <label for="active">  مفعل</label>
+                    <input type="checkbox" value="active" name="active" id="active">
+                    <label for="deactive">  غير مفعل</label>
+                    <input type="text" placeholder="رقم هاتف الزبون" class="search" id="search">
+                </div>
+                <div class="content-body">
+                        <table class="table">
+                            <thead>
+                                <th>عرض</th>
+                                <th>رقم الهاتف</th>
+                                <th>الإسم</th>
+                                <th>الموقع</th>
+                                <th>الحالة</th>
+                            </thead>
+                        <tbody id="tbody1"></tbody>
+                    </tr>
+                </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="module" src="Js/customers.js"></script>
+</html>

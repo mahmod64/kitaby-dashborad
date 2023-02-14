@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Dashboard Kitaby</title>
+        <link rel="icon" type="image/x-icon" href="شعار_كتابي.png">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@700&display=swap');
+            *{
+                /* margin: 0;
+                padding: 0; */
+                /* box-sizing: border-box; */
+                font-family: 'Noto Sans Arabic', 'Poppins';
+            }
+
+            body {
+                display: none;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+
+            html, .container {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            body, div {
+                float: right;
+                
+            }
+
+            .sidebar {
+                background: #19222a;
+                width: 14%;
+                height: 1309px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+            }
+
+            li:not(:first-child){
+                /* padding-bottom: 30px;
+                padding-top: 26px;
+                margin-bottom: 5px; */
+                line-height: 87px;
+                margin-bottom: 1.9px;
+            }
+
+            ul li:not(:first-child):hover  {
+                background-color: #ffffff0d;
+            }
+
+            .active {
+                background-color: #ffffff0d;
+            }
+
+            li a {
+                text-decoration: none;
+                color: #ffffffe6;
+                font-weight: bold;
+                /* padding: 11px 0px; */
+                width: 100%;
+                /* height: 100%; */
+                display: inline-block;
+                line-height: inherit;
+            }
+            .content {
+                margin-top: -3px;
+                margin-right: 85px;
+                width: 61.4%;
+                height: 100%;
+                align-items: end;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .content-head {
+                color: #202e1d;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 32px;
+                margin: 0;
+                width: 99.8%;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .content-head a {
+                text-decoration: none;
+                background: black;
+                padding: 9px 35px;
+                color: #ffffffe6;
+            }
+
+            .content-body {
+                margin-top: 44px;
+                width: 100%;
+                display: flex;
+                justify-content: end;
+            }
+
+
+            li:first-child {
+                color: #ffffffe6;
+                background-color: #09f;
+                padding-bottom: 5px;
+                padding-top: 5px;
+                margin-bottom: 1px;
+            }
+
+            .sidebar li a img {
+                width: 14px;
+                background: white;
+                margin-left: 10px;
+            }
+
+            .required {
+                color: red;
+            }
+
+            tr {
+                text-align: end;
+            }
+
+            td {
+                padding-left: 90px;
+            }
+
+            input, textarea, select {
+                text-align: end;
+                border: none;
+                border-radius: 5px;
+                box-shadow: 0px 0px 0px 2px #19222a;
+                width: 360px;
+                margin-bottom: 49px;
+            }
+
+            textarea {
+                height: 120px;
+                resize: none;
+                
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
+
+            #myimg{
+                width: 200px;
+                height: 200px;
+                border: 2px #19222a solid;
+                border-radius: 5px;
+            }
+
+            #sel {
+                border-radius: 5px;
+                transform: translateY(-80px);
+                cursor: pointer;
+                background: #19222a;
+                padding: 9px 71px;
+                color: #ffffffe6;
+            }
+
+            #updatebook {
+                margin-bottom: 20px;
+                border: none;
+                cursor: pointer;
+                background-color: #09f;
+                padding: 9px 71px;
+                color: #ffffffe6; 
+                border-radius: 5px;
+            }
+
+            #status2 {
+                pointer-events: none;
+                width: 91px;
+                text-align: center;
+                margin-top: 15px;
+            }
+
+            #status1 {
+                cursor: pointer;
+                padding: 2px 53px;
+                border-radius: 5px;
+                color: #fff;
+                text-align: center;
+                margin-right: 53px;
+            }
+
+            #upload {
+                border-radius: 5px;
+                transform: translateY(-80px);
+                cursor: pointer;
+                background: #19222a;
+                padding: 9px 71px;
+                color: #ffffffe6;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <ul>
+                    <li><h2>كتابي</h2></li>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li class="active"><a href="books.html">الكتب</a></li>
+                    <li><a href="orders.html">الطلبات</a></li>
+                    <li><a href="customers.html">الزبائن</a></li>
+                    <li id="em"><a href="employees.html">الموظفين</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#" id="signout" onclick="Signout()">تسجيل خروج</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="content-head">
+                <h1>بيانات الكتاب</h1>
+                </div>
+                <div class="content-body">
+                    <table>
+                        <tbody>
+                                <tr>
+                                    <td><label></label><span class="required">*  </span>العنوان</label></td>
+                                    <td><label><span class="required">*  </span>رقم الكتاب</label><span></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" id="title"   /> </td>
+                                    <td><input type="text" id="isbn"   /> </td>
+                                </tr>
+                                <tr>
+                                    <td><label><span class="required">*  </span>دار النشر</label></td>
+                                    <td><label><span class="required">*  </span>المؤلف</label></td>                                    
+                                </tr>
+                                <tr>
+                                    <td><input type="text" id="publisher"   /> </td>
+                                    <td><input type="text" id="author"   /> </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><label>حالة الكتاب</label></td>                                    
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><button type="text" id="status1"></button> <input type="text" id="status2"/></td>                                    
+                                </tr>
+                                <tr>
+                                    <td><label><span class="required">*  </span>الطبعة</label></td>
+                                    <td><label><span class="required">*  </span>عدد الصفحات</label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" id="edition"/> </td>
+                                    <td><input type="number" id="pcount" onkeydown="return event.keyCode !== 69"  > </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><label><span class="required">*  </span>وصف الكتاب</label></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><textarea id="descreption"></textarea> </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><label><span class="required">*  </span>الكمية</label></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input type="number" id="quantity"   onkeydown="return event.keyCode !== 69" /> </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><label> <span class="required">*</span>صورة الغلاف</label></td>
+                                </tr>
+                                <tr>
+                                    <td><label id="nbox"></label> <label id="extlab"></label></td>
+                                </tr>
+                                <tr>
+                                    <td><img id="myimg"> </td>
+                                    <td><button id="sel">إختر صورة</button></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><button id="upload">حمل الصورة</button></td>
+                                </tr>
+                                <tr>
+                                    <td><label></label><span class="required">*  </span>السعر</label></td>
+                                    <td><label><span class="required">*  </span>المجال</label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="number" id="price" onkeydown="return event.keyCode !== 69" /> </td>
+                                    <td>
+                                        <select id="cate">
+                                        <option value=""></option>
+                                        <option value="شريعة">شريعة</option>
+                                        <option value="اقتصاد">اقتصاد</option>
+                                        <option value="علوم حاسب">علوم حاسب</option>
+                                        <option value="طب">طب</option>
+                                        <option value="هندسة">هندسة</option>
+                                        <option value="تاريخ">تاريخ</option>
+                                        <option value="فكر">فكر</option>
+                                        <option value="روايات">روايات</option>
+                                        <option value="رياضة">رياضة</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td></td>
+                                    <td><button id="updatebook">حفظ</button></td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDezuj7apPKm7T-qUI7KDiNf84qgqv9tKM",
+          authDomain: "mybook-f7793.firebaseapp.com",
+          projectId: "mybook-f7793",
+          storageBucket: "mybook-f7793.appspot.com",
+          messagingSenderId: "653370201249",
+          appId: "1:653370201249:web:e4e9b0919da91b63b88ce0"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        import {getFirestore, doc, getDoc, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField, Timestamp}
+        from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+
+        import {getStorage, ref as sRef, uploadBytes, uploadBytesResumable, getDownloadURL} 
+        from "https://www.gstatic.com/firebasejs/9.14.0/firebase-storage.js";
+
+        import {getDatabase, ref, set, child, get, }
+        from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+
+        const db2 = getDatabase();
+
+        const db = getFirestore();
+
+        let isbn = document.getElementById('isbn');
+        let title = document.getElementById('title');
+        let author = document.getElementById('author');
+        let publisher = document.getElementById('publisher');
+        let pcount = document.getElementById('pcount');
+        let edition = document.getElementById('edition');
+        let descreption = document.getElementById('descreption');
+        let quantity = document.getElementById('quantity');
+        let cate = document.getElementById('cate');
+        let price =  document.getElementById('price');
+        let status1 = document.getElementById('status1');
+        let status2 = document.getElementById('status2');
+
+        let updatebook = document.getElementById('updatebook');
+        let upload = document.getElementById('upload');
+
+        async function getDocument() {
+
+            var url = window.location.href;
+            console.log(url.split("=")[1]);
+
+            var id = url.split("=")[1];
+            console.log(id);
+            var ref = doc(db, "Books", id);
+            const docSnap = await getDoc(ref);
+
+            if(docSnap.exists()) {
+                        isbn.value = docSnap.data().ISBN;
+                        title.value = docSnap.data().Title;
+                        author.value = docSnap.data().Author;
+                        publisher.value = docSnap.data().Publisher;
+                        pcount.value = docSnap.data().Page_Count;
+                        edition.value = docSnap.data().Edition;
+                        descreption.value = docSnap.data().Descreption;
+                        if (docSnap.data().Cover_Image_url != "") {
+                            myimg.src = docSnap.data().Cover_Image_url;
+                            localStorage.setItem('url', docSnap.data().Cover_Image_url);
+                        }
+                        quantity.value = docSnap.data().Quantity;
+                        cate.value = docSnap.data().Category;
+                        price.value = docSnap.data().Price;
+
+                        if (docSnap.data().Status == true) {
+                            status2.value = "مفعل";
+                            status2.style.color = '#08cb08c2';
+
+                            status1.innerHTML = "إلغاء التفعيل";
+                            status1.style.backgroundColor = '#ff0119b8';
+                        } else {
+                            status1.innerHTML = "تفعيل";
+                            status1.style.backgroundColor = '#08cb08c2';
+
+                            status2.value = "غير مفعل";
+                            status2.style.color = '#ff0119b8';
+                        }
+                    }
+
+                    else {
+                        alert('No Data');
+                    }
+            }
+
+                async function changeStatus() {
+                    var ref = doc(db, "Books", isbn.value);
+                    var stat;
+
+                    if (status2.value == "مفعل") {
+                        stat = false;
+                    } else {
+                        stat = true;
+                    }
+
+                    if (confirm('هل أنت متأكد من تغيير حالة الكتاب')== true){
+
+                        await updateDoc(
+                            ref, {
+                                Status: stat,
+                            }
+                        )
+                        .then(()=> {
+                            alert('تم تغيير حالة الكتاب');
+                        })
+                        .catch((error)=> {
+                            alert('Unsuccessfully Operatin, error'+error);
+                        });
+                        location.reload();
+                    } else {
+                        return 0;
+                    }
+                }
+
+                status1.addEventListener('click', changeStatus);
+
+
+        var files = [];
+        var reader = new FileReader();
+
+
+        var nbox = document.getElementById('nbox');
+        var extlab = document.getElementById('extlab');
+        var myimg = document.getElementById('myimg');
+        var sel = document.getElementById('sel');
+
+        var input = document.createElement('input');
+        input.type = 'file';
+
+        input.onchange = e =>{
+        files = e.target.files;
+
+        var extention = GetFileExt(files[0]);
+        var namee = GetFileName(files[0]);
+
+        nbox.innerHTML = namee;
+        extlab.innerHTML = extention;
+
+        reader.readAsDataURL(files[0]);
+        }
+
+        reader.onload = function() {
+        myimg.src = reader.result;
+        }
+
+        sel.onclick = function() {
+        input.click();
+        }
+
+        function GetFileExt(file) {
+        var temp = file.name.split('.');
+        var ext = temp.slice(temp.length-1, temp.length);
+        return '.' + ext[0];
+        } 
+
+        function GetFileName(file){
+        var temp = file.name.split('.');
+        var fname = temp.slice(0, -1).join('.');
+        return fname;
+        }
+
+        async function UploadPro() {
+                var ImgToUp = files[0];
+
+                var ImgName = nbox.innerHTML + extlab.innerHTML;
+
+                const metaData = {
+                    contentType:ImgToUp.type
+                }
+
+                const storage = getStorage();
+
+                const StorageRef = sRef(storage, "Images/"+ImgName);
+
+                const UploadTask = uploadBytesResumable(StorageRef, ImgToUp, metaData);
+
+                UploadTask.on('state.change', (snapshot)=> {
+                    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    console.log("Upload " + progress + "%");
+                    this.imageUrl = snapshot.downloadURL;
+                },
+                (error) => {
+                    alert("Image Not Uploaded");
+                },
+                ()=> {
+                    getDownloadURL(UploadTask.snapshot.ref).then(function x(downloadURL) {
+                        localStorage.setItem("url", downloadURL);
+                    });
+                }
+                );
+              }
+
+              upload.addEventListener('click', UploadPro);
+
+              async function update_Book(){
+                if (isbn.value != "" && title.value != "" && author.value != "" && publisher.value != "" && pcount.value != "" && price.value != "" && quantity.value != "" && cate.value != "" && descreption.value != "") {
+
+                if (isbn.value.length == 13) {
+                    if (localStorage.getItem("url") != null) {
+
+                var cover_url = localStorage.getItem("url") != null? localStorage.getItem("url"): "";
+      
+                var ref = doc(db, "Books", isbn.value);
+
+                await updateDoc(
+                    ref, {
+                        ISBN: isbn.value,
+                        Title: title.value,
+                        Author: author.value,
+                        Publisher: publisher.value,
+                        Publication_Date: Timestamp.fromDate(new Date(pubDate.value)),
+                        Page_Count: Number(pcount.value),
+                        Edition: edition.value,
+                        Descreption: descreption.value,
+                        Edition_Language: ed_lang.value,
+                        Cover_Image_url: cover_url,
+                        Quantity: Number(quantity.value),
+                        Category: cate.value,
+                        Price: Number(price.value),
+                    }
+                )
+                .then(()=> {
+                    alert('تم تعديل بيانات الكتاب');
+                    // window.location = 'books.html';
+                    
+                })
+                .catch((error)=> {
+                    alert('Unsuccessfully Operatin, error'+error);
+                });
+                localStorage.removeItem("url");
+                location.reload();
+            
+            } else {
+                myimg.style.boxShadow = "0px 0px 0px 2px #ff0119b8";
+                upload.style.boxShadow = "0px 0px 0px 2px #ff0119b8";
+                alert('يجب تحميل الصورة قبل الإضافة');
+            }
+            } else {
+                isbn.style.boxShadow = "0px 0px 0px 2px #ff0119b8";
+                alert('يجب أن يحتوي حقل ردمك علي 13 رقم');
+            }
+            } else {
+            let e = document.getElementsByClassName('req');
+            
+            for (var i = 0; i < e.length; i++) {
+                e[i].style.boxShadow ="0px 0px 0px 2px #ff0119b8";
+            } 
+
+            alert('يجب تعبئة الحقول المطلوبة');
+        }
+                    }
+
+            updatebook.addEventListener('click', update_Book);
+
+            window.onload = async function() {
+                if (localStorage.getItem('user') != null && localStorage.getItem('pass') != null) {
+
+                let em = document.getElementById('em');
+                var ref = doc(db, "Employees", localStorage.getItem('user'));
+                isbn.setAttribute("readonly", "true");
+
+                const docSnap = await getDoc(ref);
+
+                if(docSnap.exists()) {
+                    if (docSnap.data().Status == true) {
+                        getDocument();
+                        document.body.style.display = 'block';
+                        if (docSnap.data().type != '1') {
+                            em.remove();
+                        } else {
+                            return 0;
+                        }
+                    } else {
+                            window.location = 'login.html';
+                    }
+                    } else {
+                    window.location = 'login.html';
+                    }
+                } else {
+                    window.location = 'login.html';
+                }
+        }
+        </script>
+</html>

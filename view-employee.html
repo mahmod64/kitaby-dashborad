@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Dashboard Kitaby</title>
+        <link rel="icon" type="image/x-icon" href="شعار_كتابي.png">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@700&display=swap');
+            *{
+                /* margin: 0;
+                padding: 0; */
+                /* box-sizing: border-box; */
+                font-family: 'Noto Sans Arabic', 'Poppins';
+            }
+
+            body {
+                display: none;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+
+            html, .container {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            body, div {
+                float: right;
+                
+            }
+
+            .sidebar {
+                background: #19222a;
+                width: 14%;
+                height: 1309px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+            }
+
+            li:not(:first-child){
+                /* padding-bottom: 30px;
+                padding-top: 26px;
+                margin-bottom: 5px; */
+                line-height: 87px;
+                margin-bottom: 1.9px;
+            }
+
+            ul li:not(:first-child):hover  {
+                background-color: #ffffff0d;
+            }
+
+            .active {
+                background-color: #ffffff0d;
+            }
+
+            li a {
+                text-decoration: none;
+                color: #ffffffe6;
+                font-weight: bold;
+                /* padding: 11px 0px; */
+                width: 100%;
+                /* height: 100%; */
+                display: inline-block;
+                line-height: inherit;
+            }
+            .content {
+                margin-top: -3px;
+                margin-right: 85px;
+                width: 61.4%;
+                height: 100%;
+                align-items: end;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .content-head {
+                color: #202e1d;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 32px;
+                margin: 0;
+                width: 99.8%;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .content-head a {
+                text-decoration: none;
+                background: black;
+                padding: 9px 35px;
+                color: #ffffffe6;
+            }
+
+            .content-body {
+                margin-top: 44px;
+                width: 100%;
+                display: flex;
+                direction: rtl;
+            }
+
+
+            li:first-child {
+                color: #ffffffe6;
+                background-color: #09f;
+                padding-bottom: 5px;
+                padding-top: 5px;
+                margin-bottom: 1px;
+            }
+
+            .sidebar li a img {
+                width: 14px;
+                background: white;
+                margin-left: 10px;
+            }
+
+            .required {
+                color: red;
+            }
+
+            td {
+                padding-left: 90px;
+            }
+
+            input, textarea, select {
+                border: none;
+                border-radius: 5px;
+                box-shadow: 0px 0px 0px 2px #19222a;
+                width: 360px;
+                margin-bottom: 49px;
+            }
+
+            textarea {
+                height: 120px;
+                resize: none;
+                
+            }
+
+            #edition {
+                transform: translateY(-53px);
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
+
+            #myimg{
+                width: 200px;
+                height: 200px;
+                border: 2px #19222a solid;
+                border-radius: 5px;
+            }
+
+            #sel {
+                border-radius: 5px;
+                transform: translateY(-80px);
+                cursor: pointer;
+                background: #19222a;
+                padding: 9px 71px;
+                color: #ffffffe6;
+            }
+
+            #update {
+                margin-bottom: 20px;
+                border: none;
+                cursor: pointer;
+                background-color: #09f;
+                padding: 9px 71px;
+                color: #ffffffe6; 
+                border-radius: 5px;
+            }
+
+            #status2 {
+                pointer-events: none;
+                width: 91px;
+                text-align: center;
+                margin-top: 15px;
+            }
+
+            #status1 {
+                cursor: pointer;
+                padding: 2px 53px;
+                border-radius: 5px;
+                color: #fff;
+                text-align: center;
+                margin-right: 53px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <ul>
+                    <li><h2>كتابي</h2></li>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="books.html">الكتب</a></li>
+                    <li><a href="orders.css">الطلبات</a></li>
+                    <li><a href="customers.html">الزبائن</a></li>
+                    <li class="active"><a href="employees.html">الموظفين</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#" id="signout" onclick="Signout()">تسجيل خروج</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="content-head">
+                <h1>تعديل بيانات الموظف</h1>
+                </div>
+                <div class="content-body">
+                    <table>
+                        <tbody>
+                                <tr>
+                                    <td><label>إسم المستخدم<span class="required"> *</span></label></td>
+                                    <td><label>كلمة المرور<span class="required"> *</label><span></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" id="username"/> </td>
+                                    <td><input type="password" id="password"/> </td>
+                                </tr>
+                                <tr>
+                                    <td><label>حالة الموظف</label></td>                                
+                                </tr>
+                                <tr>
+                                    <td><input type="text" id="status2"/><button type="text" id="status1"></button></td>                                    
+                                </tr>
+                                <tr>
+                                    <td><button id="update">حفظ</button></td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDezuj7apPKm7T-qUI7KDiNf84qgqv9tKM",
+          authDomain: "mybook-f7793.firebaseapp.com",
+          projectId: "mybook-f7793",
+          storageBucket: "mybook-f7793.appspot.com",
+          messagingSenderId: "653370201249",
+          appId: "1:653370201249:web:e4e9b0919da91b63b88ce0"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        import {getFirestore, doc, getDoc, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField, Timestamp}
+        from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+
+        import {getDatabase, ref, set, child, get, }
+        from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+
+        const db2 = getDatabase();
+
+        const db = getFirestore();
+
+        let username = document.getElementById('username');
+        let password = document.getElementById('password');
+        let status1 = document.getElementById('status1');
+        let status2 = document.getElementById('status2');
+
+        let update = document.getElementById('update');
+
+        async function getDocument() {
+
+            var url = window.location.href;
+            console.log(url.split("=")[1]);
+
+            var id = url.split("=")[1];
+            console.log(id);
+            var ref = doc(db, "Employees", id);
+            const docSnap = await getDoc(ref);
+
+            if(docSnap.exists()) {
+                        username.value = docSnap.data().Username;
+                        password.value = docSnap.data().Password;
+
+                        if (docSnap.data().Status == true) {
+                            status2.value = "مفعل";
+                            status2.style.color = '#08cb08c2';
+
+                            status1.innerHTML = "إلغاء التفعيل";
+                            status1.style.backgroundColor = '#ff0119b8';
+                        } else {
+                            status1.innerHTML = "تفعيل";
+                            status1.style.backgroundColor = '#08cb08c2';
+
+                            status2.value = "غير مفعل";
+                            status2.style.color = '#ff0119b8';
+                        }
+                    }
+
+                    else {
+                        alert('No Data');
+                    }
+            }
+
+            window.onload = async function() {
+            if (localStorage.getItem('user') != null && localStorage.getItem('pass') != null) {
+
+                let em = document.getElementById('em');
+                var ref = doc(db, "Employees", localStorage.getItem('user'));
+
+                const docSnap = await getDoc(ref);
+
+                if(docSnap.exists()) {
+                    if (docSnap.data().Status == true) {
+                        if (docSnap.data().type == '1') {
+                            getDocument();
+                            document.body.style.display = 'block';
+                        } else {
+                            window.location = 'login.html';
+                        }
+                    } else {
+                            window.location = 'login.html';
+                    }
+                    } else {
+                    window.location = 'login.html';
+                    }
+                } else {
+                    window.location = 'login.html';
+                }
+
+        }
+
+                async function changeStatus() {
+                    var ref = doc(db, "Employees", username.value);
+                    var stat;
+
+                    if (status2.value == "مفعل") {
+                        stat = false;
+                    } else {
+                        stat = true;
+                    }
+
+                    if (confirm('هل أنت متأكد من تغيير حالة الموظف')== true){
+
+                        await updateDoc(
+                            ref, {
+                                Status: stat,
+                            }
+                        )
+                        .then(()=> {
+                            alert('تم تغيير حالة الموظف');
+                        })
+                        .catch((error)=> {
+                            alert('Unsuccessfully Operatin, error'+error);
+                        });
+                    } else {
+                        return 0;
+                    }
+                }
+
+                status1.addEventListener('click', changeStatus);
+
+
+              async function update_employee(){
+                if (username.value != "") {
+                username.classList.remove("req");
+
+                if (password.value != "") {
+                    if (password.value.length >= 8) {
+      
+                var ref = doc(db, "Employees", username.value);
+
+                await updateDoc(
+                    ref, {
+                        Username: username.value,
+                        Password: password.value,
+                        type: "2",
+                    }
+                )
+                .then(()=> {
+                    alert('تم تعديل بيانات الموظف');
+                    // window.location = 'books.html';
+                })
+                .catch((error)=> {
+                    alert('Unsuccessfully Operatin, error'+error);
+                });
+                        } else {
+                            password.classList.add("req");
+                            alert('كلمة المرور يجب أن تحتوي علي 8 خانات');
+                    }
+                } else {
+                    password.classList.add("req");
+                    alert('يجب تعبئة الحقول المطلوبة');
+                }
+                } else {
+                    username.classList.add("req");
+                    alert('يجب تعبئة الحقول المطلوبة');
+                //     let e = document.getElementsByClassName('req');
+                
+                // for (var i = 0; i < e.length; i++) {
+                //     e[i].style.boxShadow ="0px 0px 0px 2px #ff0119b8";
+                // }
+
+                // alert('يجب تعبئة الحقول المطلوبة');
+                }
+            }
+
+            update.addEventListener('click', update_employee);
+
+            function Signout() {
+                if (sessionStorage.getItem(md5('user')) != null) {
+                    window.sessionStorage.removeItem(md5('user'));
+                    window.sessionStorage.removeItem(md5('pass'));
+                }
+                window.localStorage.removeItem(md5('user'));
+                window.localStorage.removeItem(md5('pass'));
+                window.localStorage.removeItem('keepLogIn');
+                window.location = 'login.html';
+            }
+        </script>
+</html>

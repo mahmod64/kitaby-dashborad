@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@700&display=swap');
+*{
+    /* margin: 0;
+    padding: 0; */
+    /* box-sizing: border-box; */
+    font-family: 'Noto Sans Arabic', 'Poppins';
+}
+
+
+
+body {
+    direction: rtl;
+}
+
+div {
+    position: absolute;
+    top: 11%;
+    right: 40%;
+    text-align: center;
+    border: 1px #000 solid;
+    width: 300px;
+    height: 382px;
+    border-radius: 8px;
+}
+
+h1 {
+    background-color: #23311C;
+    color: #fff;
+    margin-left: 39px;
+    margin-right: 39px;
+    border-radius: 8px;
+}
+
+div input:not(:nth-child(3)) {
+    width: 210px;
+    border-radius: 5px;
+}
+
+label, input  {
+    margin-bottom: 20px;
+}
+
+#checkbox {
+    width: auto;
+}
+
+#sub_btn {
+    cursor: pointer;
+    background-color: #23311C;
+    color: #fff;
+}
+
+.required {
+    color: red;
+}

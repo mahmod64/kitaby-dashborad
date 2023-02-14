@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@700&display=swap');
+            *{
+                /* margin: 0;
+                padding: 0; */
+                /* box-sizing: border-box; */
+                font-family: 'Noto Sans Arabic', 'Poppins';
+            }
+
+            body {
+                display: none;
+            }
+
+            html, body, .container {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                direction: rtl;
+            }
+
+            body, div {
+                float: right;
+                
+            }
+
+            .sidebar {
+                position: fixed;
+                background: #19222a;
+                width: 14%;
+                height: 1309px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+            }
+
+            li:not(:first-child){
+                /* padding-bottom: 30px;
+                padding-top: 26px;
+                margin-bottom: 5px; */
+                line-height: 87px;
+                margin-bottom: 1.9px;
+            }
+
+            li:last-child {
+                margin-top: 25px;
+            }
+
+            ul li:not(:first-child):hover  {
+                background-color: #ffffff0d;
+            }
+
+            .active {
+                background-color: #ffffff0d;
+            }
+
+            li a {
+                text-decoration: none;
+                color: #ffffffe6;
+                font-weight: bold;
+                /* padding: 11px 0px; */
+                width: 100%;
+                /* height: 100%; */
+                display: inline-block;
+                line-height: inherit;
+            }
+            .content {
+                margin-top: -3px;
+                margin-right: 263px;
+                width: 61.4%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .content-head {
+                color: #202e1d;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 32px;
+                margin: 0;
+                width: 99.8%;
+                display: flex;
+            }
+
+            .content-head a {
+                text-decoration: none;
+                background: black;
+                padding: 9px 35px;
+                color: #ffffffe6;
+            }
+
+            .content-body {
+                margin-top: 44px;
+                margin-right: 80px;
+                width: 100%;
+                display: flex;
+                direction: ltr;
+            }
+
+
+            li:first-child {
+                color: #ffffffe6;
+                background-color: #09f;
+                padding-bottom: 5px;
+                padding-top: 5px;
+                margin-bottom: 1px;
+            }
+
+            .sidebar li a img {
+                width: 14px;
+                background: white;
+                margin-left: 10px;
+            }
+
+            .required {
+                color: red;
+            }
+
+            tr {
+                text-align: end;
+            }
+
+            td {
+                padding-left: 90px;
+            }
+
+            input, textarea, select {
+                text-align: end;
+                border: none;
+                border-radius: 5px;
+                box-shadow: 0px 0px 0px 2px #19222a;
+                width: 360px;
+                margin-bottom: 49px;
+            }
+
+            textarea {
+                height: 120px;
+                resize: none;
+                
+            }
+
+            /* #edition {
+                transform: translateY(-53px);
+            } */
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
+
+            #myimg{
+                width: 200px;
+                height: 200px;
+                border: 2px #19222a solid;
+                border-radius: 5px;
+            }
+
+            #sel {
+                border-radius: 5px;
+                transform: translateY(-80px);
+                cursor: pointer;
+                background: #19222a;
+                padding: 9px 71px;
+                color: #ffffffe6;
+            }
+
+            #upload {
+                border-radius: 5px;
+                transform: translateY(-80px);
+                cursor: pointer;
+                background: #19222a;
+                padding: 9px 64px;
+                color: #ffffffe6;
+            }
+
+            #addbtn {
+                margin-bottom: 20px;
+                border: none;
+                cursor: pointer;
+                background-color: #09f;
+                padding: 9px 71px;
+                color: #ffffffe6; 
+                border-radius: 5px;
+            }
+
+            #status {
+                pointer-events: none;
+                width: 91px;
+                text-align: center;
+                margin-top: 15px;
+                margin-right: 53px;
+            }
+
+            .req {
+                box-shadow: 0px 0px 0px 2px #ff0119b8;
+            }

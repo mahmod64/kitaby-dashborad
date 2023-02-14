@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Dashboard</title>
+        <script type="text/javascript" src="Js/md5.min.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@700&display=swap');
+            *{
+                /* margin: 0;
+                padding: 0; */
+                /* box-sizing: border-box; */
+                font-family: 'Noto Sans Arabic', 'Poppins';
+            }
+
+            body {
+                display: none;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+
+            html, .container {
+                direction: rtl;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            body, div {
+                float: right;
+                
+            }
+
+            .sidebar {
+                position: fixed;
+                background: #19222a;
+                width: 14%;
+                height: 1309px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+            }
+
+            li:not(:first-child){
+                /* padding-bottom: 30px;
+                padding-top: 26px;
+                margin-bottom: 5px; */
+                line-height: 87px;
+                margin-bottom: 1.9px;
+            }
+
+            ul li:not(:first-child):hover  {
+                background-color: #ffffff0d;
+            }
+
+            li:last-child {
+                margin-top: 25px;
+            }
+
+            .active {
+                background-color: #ffffff0d;
+            }
+
+            li a {
+                text-decoration: none;
+                color: #ffffffe6;
+                font-weight: bold;
+                /* padding: 11px 0px; */
+                width: 100%;
+                /* height: 100%; */
+                display: inline-block;
+                line-height: inherit;
+            }
+            .content {
+                direction: ltr;
+                margin-top: -3px;
+                margin-right: 260px;
+                width: 61.4%;
+                height: 100%;
+                align-items: end;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .content-head {
+                color: #202e1d;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 32px;
+                margin: 0;
+                width: 99.8%;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .content-head a {
+                text-decoration: none;
+                background: black;
+                padding: 9px 35px;
+                color: #ffffffe6;
+            }
+
+            .content-body {
+                margin-top: 44px;
+                width: 100%;
+                display: flex;
+                direction: rtl;
+            }
+
+
+            li:first-child {
+                color: #ffffffe6;
+                background-color: #09f;
+                padding-bottom: 5px;
+                padding-top: 5px;
+                margin-bottom: 1px;
+            }
+
+            .sidebar li a img {
+                width: 14px;
+                background: white;
+                margin-left: 10px;
+            }
+
+            .required {
+                color: red;
+            }
+
+            td {
+                padding-left: 90px;
+            }
+
+            input, textarea {
+                border: none;
+                border-radius: 5px;
+                box-shadow: none;
+                color: darkgray;
+                width: 360px;
+                margin-bottom: 49px;
+            }
+
+            select {
+                border: none;
+                border-radius: 5px;
+                box-shadow: 0px 0px 0px 2px #19222a;
+                width: 170px;
+                margin-bottom: 49px;
+            }
+
+            #edition {
+                transform: translateY(-53px);
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
+
+            #myimg{
+                width: 200px;
+                height: 200px;
+                border: 2px #19222a solid;
+                border-radius: 5px;
+            }
+
+            #sel {
+                border-radius: 5px;
+                transform: translateY(-80px);
+                cursor: pointer;
+                background: #19222a;
+                padding: 9px 71px;
+                color: #ffffffe6;
+            }
+
+            #update {
+                margin-bottom: 20px;
+                border: none;
+                cursor: pointer;
+                background-color: #09f;
+                padding: 9px 71px;
+                color: #ffffffe6; 
+                border-radius: 5px;
+            }
+
+            #status2 {
+                pointer-events: none;
+                width: 91px;
+                text-align: center;
+                margin-top: 15px;
+            }
+
+            #status1 {
+                cursor: pointer;
+                padding: 2px 53px;
+                border-radius: 5px;
+                color: #fff;
+                text-align: center;
+                margin-right: 53px;
+            }
+
+            .content-head h2 {
+                display: none;
+            }
+
+            @media print {
+                .sidebar {
+                    display: none !important;
+                }
+
+                .content-head h1 {
+                    display: none !important;
+                }
+
+                .content-head h2 {
+                    display: block;
+                    width: 50%;
+                    padding: 20px;
+                    background-color: #09f;
+                    color: #fff;
+                }
+
+                #update {
+                    display: none !important;
+                }
+
+                select::-ms-expand {
+                    display: none !important;
+
+                }
+
+                select {
+                    -webkit-appearance: none;
+                    -webkit-user-select: none;
+                    box-shadow: none;
+                    color: darkgrey;
+                }
+
+                .content {
+                    margin-top: 10px;
+                    margin-right: 290px;
+                    width: 100%;
+                    font-size: 30px;
+                }
+
+                .content-head {
+                    text-align: center;
+                }
+
+                .content-body {}
+
+                input, select {
+                    color: #19222a;
+                    font-size: 30px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <ul>
+                    <li><h2>كتابي</h2></li>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="books.html">الكتب</a></li>
+                    <li class="active"><a href="orders.html">الطلبات</a></li>
+                    <li><a href="customers.html">الزبائن</a></li>
+                    <li id="em"><a href="employees.html">الموظفين</a></li>
+                    <!-- <li><a href="#"></a></li>
+                    <li><a href="#"></a></li> -->
+                    <li><a href="#" id="signout" onclick="Signout()">تسجيل خروج</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="content-head">
+                <h1>تعديل حالة الطلب</h1>
+                <h2>فاتورة</h2>
+                </div>
+                <div class="content-body">
+                    <table>
+                        <tbody>
+                                <tr>
+                                    <td><label>رقم الطلب</label></td>
+                                    <td><label>تاريخ الطلب</label><span></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" id="id"/> </td>
+                                    <td><input type="text" id="date"/> </td>
+                                </tr>
+                                <tr>
+                                    <td><label>إسم الزبون</label></td> 
+                                    <td><label>الموقع</label></td>                                  
+                                </tr>
+                                <tr>
+                                    <td><input type="text" id="name"/> </td>
+                                    <td><input type="text" id="location"/> </td>
+                                </tr>
+                                <tr>
+                                    <td><label>رقم الهاتف</label></td> 
+                                    <td><label>المبلغ الاجمالي</label></td>                                
+                                </tr>
+                                <tr>
+                                    <td><input type="text" id="phone"/></td>
+                                    <td><input type="text" id="price"/></td>
+                                </tr>
+                                <tr>
+                                    <td><label>وسيلة الدفع</label></td>
+                                    <td><label>حالة الطلب</label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" id="payment_method"/></td>
+                                    <td>
+                                        <select id="status">
+                                            <option value="تحت المراجعة">تحت المراجعة</option>
+                                            <option value="ملغية">ملغية</option>
+                                            <option value="قيد التوصيل">قيد التوصيل</option>
+                                            <option value="تم الاستلام">تم الاستلام</option>
+                                        </select>
+                                    </td>                                    
+                                </tr>
+                                <tr>
+                                    <td><button id="update">حفظ</button></td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDezuj7apPKm7T-qUI7KDiNf84qgqv9tKM",
+          authDomain: "mybook-f7793.firebaseapp.com",
+          projectId: "mybook-f7793",
+          storageBucket: "mybook-f7793.appspot.com",
+          messagingSenderId: "653370201249",
+          appId: "1:653370201249:web:e4e9b0919da91b63b88ce0"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        import {getFirestore, collectionGroup, doc, onSnapshot, getDoc, getDocs, setDoc, getCountFromServer, collection, addDoc, updateDoc, deleteDoc, deleteField, Timestamp, startAt, query, orderBy, startAfter, endAt, endBefore, where}
+        from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+
+        import {getDatabase, ref, set, child, get, }
+        from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+
+        const db2 = getDatabase();
+
+        const db = getFirestore();
+
+        let id = document.getElementById('id');
+        let date = document.getElementById('date');
+        let name = document.getElementById('name');
+        let location = document.getElementById('location');
+        let phone = document.getElementById('phone');
+        let price = document.getElementById('price');
+        let status = document.getElementById('status');
+        let payment_method = document.getElementById('payment_method');
+
+        let update = document.getElementById('update');
+
+        id.setAttribute("readonly", "true");
+        date.setAttribute("readonly", "true");
+        name.setAttribute("readonly", "true");
+        location.setAttribute("readonly", "true");
+        phone.setAttribute("readonly", "true");
+        price.setAttribute("readonly", "true");
+        payment_method.setAttribute("readonly", "true");
+
+        async function getDocument() {
+
+            var url = window.location.href;
+            console.log(url.slice(49, 69));
+            console.log(url.split("=")[2]);
+
+            var idd = url.slice(49, 69);
+            var phonee = url.split("=")[2];
+
+            const q = query(collectionGroup(db, "Orders"), where("id", "==", idd));
+
+            const querySnapshot = await getDocs(q);
+            querySnapshot.forEach((doc) => {
+            
+            console.log(doc.data());
+            id.value = doc.data().id;
+            date.value = doc.data().date_created?.toDate().getFullYear()+'-'+(doc.data().date_created.toDate().getMonth()+1)+'-'+doc.data().date_created.toDate().getDate();
+            price.value = doc.data().total_price;
+            status.value = doc.data().status;
+            payment_method.value = doc.data().payment_method;
+            });
+
+            var ref = doc(db, "Users", phonee);
+            const docSnap = await getDoc(ref);
+
+            if(docSnap.exists()) {
+                        phone.value = docSnap.data().phoneNumber;
+                        name.value = docSnap.data().name;
+                        location.value = docSnap.data().location;
+                    }
+
+                    else {
+                        alert('No Data');
+                    }
+            }
+
+            window.onload = async function() {
+                if (localStorage.getItem('user') != null && localStorage.getItem('pass') != null) {
+
+                let em = document.getElementById('em');
+                var ref = doc(db, "Employees", localStorage.getItem('user'));
+
+                const docSnap = await getDoc(ref);
+
+
+                var c = collection(db, '/Users/0912345678/Orders/cJWMlMt4EOOu9U0ISotW/Order_Items');
+                onSnapshot(c, (q) => {
+                    q.forEach(d => {
+                    console.log(d.data());
+                    });
+                })
+                
+
+                if(docSnap.exists()) {
+                    if (docSnap.data().Status == true) {
+                        getDocument();
+                        document.body.style.display = 'block';
+                        if (docSnap.data().type != '1') {
+                            em.remove();
+                        } else {
+                            return 0;
+                        }
+                    } else {
+                            window.location = 'login.html';
+                    }
+                    } else {
+                    window.location = 'login.html';
+                    }
+                } else {
+                    window.location = 'login.html';
+                }
+        }
+
+
+              async function update_order(){
+      
+                var url = window.location.href;
+                var idd = url.slice(49, 69);
+                var phonee = url.split("=")[2];
+                var ref = doc(db, `/Users/${phonee}/Orders/${idd}/`);
+
+                await updateDoc(
+                    ref, {
+                        status: status.value,
+                    }
+                )
+                .then(()=> {
+                    alert('تم تعديل حالة الطلب');
+                    // window.location = 'books.html';
+                })
+                .catch((error)=> {
+                    alert('Unsuccessfully Operatin, error'+error);
+                });
+            }
+
+            update.addEventListener('click', update_order);
+
+            function Signout() {
+                if (sessionStorage.getItem(md5('user')) != null) {
+                    window.sessionStorage.removeItem(md5('user'));
+                    window.sessionStorage.removeItem(md5('pass'));
+                }
+                window.localStorage.removeItem(md5('user'));
+                window.localStorage.removeItem(md5('pass'));
+                window.localStorage.removeItem('keepLogIn');
+                window.location = 'login.html';
+            }
+        </script>
+</html>

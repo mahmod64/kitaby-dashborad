@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Dashboard Kitaby</title>
+        <link rel="icon" type="image/x-icon" href="شعار_كتابي.png">
+        <link rel="stylesheet" href="CSS/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <ul>
+                    <li><h2>كتابي</h2></li>
+                    <li class="active"><a href="index.html">الرئيسية</a></li>
+                    <li ><a href="books.html">الكتب</a></li>
+                    <li><a href="orders.html">الطلبات</a></li>
+                    <li><a href="customers.html">الزبائن</a></li>
+                    <li id="em"><a href="employees.html">الموظفين</a></li>
+                    <li><a href="#" id="signout" onclick="Signout()">تسجيل خروج</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="content-head">
+                <h1>الرئيسية</h1>
+                </div>
+                <div>
+                    <h3>إحصائيات</h3>
+                </div>
+                <div class="content-body">
+                        <div class="top">
+                            <p>عدد الكتب</p>
+                            <p id="books_count"></p>
+                        </div>
+                        <div class="top">
+                            <p>عدد الزبائن</p>
+                            <p id="customers_count"></p>
+                        </div>
+                        <div class="top order1">
+                            <p>عدد الطلبات المستلمة</p>
+                            <p>إجمالي المبلغ</p>
+                            <p id="deliverd"></p>
+                            <p id="dd_total"></p>
+                        </div>
+                        <div class="top order2">
+                            <p>عدد الطلبات الملغية</p>
+                            <p>إجمالي المبلغ</p>
+                            <p id="cancelled"></p>
+                            <p id="cd_total"></p>
+                        </div>
+                        <div class="top order3">
+                            <p>عدد الطلبات قيد التوصيل</p>
+                            <p>إجمالي المبلغ</p>
+                            <p id="on-way"></p>
+                            <p id="dg_total"></p>
+                        </div>
+                        <div class="top order4">
+                            <p>عدد الطلبات قيد المراجعة</p>
+                            <p>إجمالي المبلغ</p>
+                            <p id="reviewing"></p>
+                            <p id="rg_total"></p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="module" src="Js/index.js"></script>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Dashboard Kitaby</title>
+        <link rel="icon" type="image/x-icon" href="شعار_كتابي.png">
+        <link rel="stylesheet" href="CSS/add-book.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <ul>
+                    <li><h2>كتابي</h2></li>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li class="active"><a href="books.html">الكتب</a></li>
+                    <li><a href="orders.html">الطلبات</a></li>
+                    <li><a href="customers.html">الزبائن</a></li>
+                    <li id="em"><a href="employees.html">الموظفين</a></li>
+                    <!-- <li><a href="#"></a></li>
+                    <li><a href="#"></a></li> -->
+                    <li><a href="#" id="signout" onclick="Signout()">تسجيل خروج</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="content-head">
+                <h1>إضافة كتاب</h1>
+                </div>
+                <div class="content-body">
+                    <table>
+                        <tbody>
+                                <tr>
+                                    <td><label></label><span class="required">*  </span>العنوان</label></td>
+                                    <td><label><span class="required">*  </span>رقم الكتاب</label><span></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" id="title"/> </td>
+                                    <td><input type="text" id="isbn"/> </td>
+                                </tr>
+                                <tr>
+                                    <td><label><span class="required">*  </span>دار النشر</label></td>
+                                    <td><label><span class="required">*  </span>المؤلف</label></td>                                    
+                                </tr>
+                                <tr>
+                                    <td><input   type="text" id="publisher"   /> </td>
+                                    <td><input   type="text" id="author"   /> </td>
+                                </tr>
+                                <tr>    
+                                    <td><label><span class="required">*  </span>الطبعة</label></td>                                
+                                    <td><label><span class="required">*  </span>عدد الصفحات</label></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td><input   type="text" id="edition"/> </td>
+                                    <td><input   type="number" id="pcount" onkeydown="return event.keyCode !== 69"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><label><span class="required">*  </span>وصف الكتاب</label></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><textarea   id="descreption"></textarea> </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><label><span class="required">*  </span>الكمية</label></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input type="number" id="quantity"   onkeydown="return event.keyCode !== 69" /> </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><label> <span class="required">*</span>صورة الغلاف</label></td>
+                                </tr>
+                                <tr>
+                                    <td><label id="nbox"></label> <label id="extlab"></label></td>
+                                </tr>
+                                <tr>
+                                    <td><img id="myimg"> </td>
+                                    <td><button id="sel">إختر صورة</button></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><button id="upload">حمل الصورة</button></td>
+                                </tr>
+                                <tr>
+                                    <td><label></label><span class="required">*  </span>السعر</label></td>
+                                    <td><label><span class="required">*  </span>المجال</label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="number" id="price"   onkeydown="return event.keyCode !== 69" /> </td>
+                                    <td>
+                                        <select id="cate">
+                                        <option value=""></option>
+                                        <option value="شريعة">شريعة</option>
+                                        <option value="اقتصاد">اقتصاد</option>
+                                        <option value="علوم حاسب">علوم حاسب</option>
+                                        <option value="طب">طب</option>
+                                        <option value="هندسة">هندسة</option>
+                                        <option value="تاريخ">تاريخ</option>
+                                        <option value="فكر">فكر</option>
+                                        <option value="روايات">روايات</option>
+                                        <option value="رياضة">رياضة</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td></td>
+                                    <td><button id="addbtn">إضافة الكتاب</button></td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="module" src="Js/add-book.js"></script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="CSS/add-book.css">
+        <script type="text/javascript" src="Js/md5.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <ul>
+                    <li><h2>كتابي</h2></li>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li ><a href="books.html">الكتب</a></li>
+                    <li><a href="orders.html">الطلبات</a></li>
+                    <li><a href="customers.html">الزبائن</a></li>
+                    <li class="active"><a href="employees.html">الموظفين</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="content-head">
+                <h1>إضافة موظف</h1>
+                </div>
+                <div class="content-body">
+                    <table>
+                        <tbody>
+                                <tr>
+                                    <td><label></label><span class="required">*  </span>كلمة المرور</label></td>
+                                    <td><label><span class="required">*  </span>إسم مستخدم</label><span></td>
+                                </tr>
+                                <tr>
+                                    <td><input  type="text" id="password"/> </td>
+                                    <td><input  type="text" id="username"/> </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><button id="addbtn">إضافة</button></td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="module" src="Js/add-employee.js"></script>
+</html>
